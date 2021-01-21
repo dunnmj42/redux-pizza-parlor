@@ -1,5 +1,4 @@
 import {useDispatch, useSelector} from 'react-redux'
-import { bindActionCreators } from 'redux';
 
 function Checkout() {
 
@@ -38,7 +37,7 @@ function Checkout() {
   return (
     <div>
       <header>
-
+        <h1>Prime Pizza</h1>
       </header>
       <h2>Step 3: Checkout</h2>
       <p>{customer.name}</p>
