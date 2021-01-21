@@ -3,8 +3,14 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
+import Button from "react-bootstrap/Button";
 
 function PizzaItem({ pizza, toggleSelect }) {
+
+  const [isItemSelected, setIsItemSelected] = useState(false);
+
+  const [pizzasInCart, setPizzasInCart] = useState([]);
+
   return (
     <CardColumns className="cardColumns">
       <Card>

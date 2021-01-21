@@ -23,7 +23,7 @@ function SelectPizza() {
       setPizzasInCart([...pizzasInCart, pizza]);
     } else if (!isItemSelected) {
       const matchPizza = (pizza) => pizza.id !== pizza.id;
-      setPizzasInCart.filter(matchPizza);
+      setPizzasInCart(pizzasInCart.filter(matchPizza));
     }
   };
 

@@ -38,7 +38,7 @@ function App() {
     <Router>
       <div className="App">
         <main>
-          <Route path="/">
+          <Route exact path="/">
             <SelectPizza />
           </Route>
           <Route path="/form">
