@@ -18,10 +18,13 @@ function CustomerForm() {
     event.preventDefault();
     console.log('adding customer info:' ,  {name, address, city, zip, type}) ;
 
+    //dispatch to customer reducer
     dispatch({
       type: 'SET_CUSTOMER_INFO',
       payload: {name, address, city, zip, type}
     })
+    //send to checkout page
+    history.push('/checkout');
   }
 
 
@@ -43,7 +46,10 @@ function CustomerForm() {
         <input type="checkbox" name="delivery" id="delivery" value={type}onChange={(e) => setType(e.target.value)}/>
         <label htmlFor="delivery">Delivery</label>
 
+        <button type='submit'>NEXT</button>
+
       </form>
+
     </section>
 
     </>
