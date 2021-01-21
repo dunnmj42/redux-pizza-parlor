@@ -7,7 +7,14 @@ import './index.css';
 import App from './components/App/App';
 
 const cartReducer = (state = [], action) => {
-  return state;
+  switch(action.type) {
+    case 'SET_CART':
+      return action.payload;
+    case 'CLEAR':
+      return action.payload;
+    default:
+      return state;
+  }
 }
 
 const pizzaReducer = (state = [], action) => {
@@ -21,7 +28,15 @@ const pizzaReducer = (state = [], action) => {
 }
 
 const customerReducer = (state = [], action) => {
-  return state;
+
+  switch(action.type) {
+    case 'SET_CUSTOMER_INFO':
+      return action.payload;
+    case 'CLEAR':
+      return action.payload;
+    default:
+      return state;
+  }
 }
 
 const reduxStore = createStore(
