@@ -4,6 +4,11 @@ import "./App.css";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import SelectPizza from '../SelectPizza/SelectPizza'
+import Header from '../Header/Header'
+import CustomerForm from '../CustomerForm/CustomerForm'
+import Checkout from '../Checkout/Checkout'
+import Admin from '../Admin/Admin'
 
 function App() {
   const dispatch = useDispatch();
@@ -32,9 +37,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Prime Pizza</h1>
-        </header>
         <main>
           <Route path="/">
             <SelectPizza />

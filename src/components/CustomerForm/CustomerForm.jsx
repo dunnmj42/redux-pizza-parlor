@@ -2,6 +2,7 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import Header from '../Header/Header'
 
 
 function CustomerForm() {
@@ -32,6 +33,7 @@ function CustomerForm() {
   return(
     <>
     <div>
+      <Header />
       <h2>Step 2: Customer Information</h2>
     </div>
     <section>

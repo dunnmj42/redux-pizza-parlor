@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { PizzaItem } from "../PizzaItem/PizzaItem";
+import PizzaItem from "../PizzaItem/PizzaItem";
 import Button from "react-bootstrap/Button";
+import Header from "../Header/Header"
 
 function SelectPizza() {
   const history = useHistory();
@@ -33,6 +34,7 @@ function SelectPizza() {
 
   return (
     <section>
+      <Header />
       <h2>Step 1: Select Your Pizza</h2>
 
       {pizzas.map((pizza, i) => (
