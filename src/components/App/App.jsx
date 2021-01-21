@@ -19,7 +19,7 @@ function App() {
 
   const fetchPizzas = () => {
     axios
-      .get("/pizza")
+      .get("/api/pizza")
       .then((response) => {
         // do stuff with data! response.data
         const action = {
