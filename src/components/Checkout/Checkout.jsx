@@ -1,15 +1,48 @@
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import { bindActionCreators } from 'redux';
 
 function Checkout() {
 
   const cart = useSelector(store => store.cartReducer);
   const customer = useSelector(store => store.customerReducer);
 
+  const dispatch = useDispatch();
+
+  const handleCheckout = (cart, customer) => {
+
+    let customerToSend = {
+      customer_name: customer.name,
+      street_address: customer.address,
+	    city: customer.city,
+	    zip: customer.zip,
+	    type: customer.type,
+      total: cart.total,
+      pizzas: cart.pizzas
+    }
+
+    axios.post('/api/order', customerToSend)
+      .then(response => {
+          const action = {
+            type: "CLEAR",
+            payload: [],
+          };
+
+          dispatch(action);
+          history.push('/');
+      }).catch(err => {
+        console.error(err)
+      })
+
+  }
+
   return (
     <div>
+      <header>
+
+      </header>
       <h2>Step 3: Checkout</h2>
-      <p>{customer.customer_name}</p>
-      <p>{customer.street_address}</p>
+      <p>{customer.name}</p>
+      <p>{customer.address}</p>
       <p>{customer.city}, MN {customer.zip}</p>
       <p>{customer.type}</p>
       <table>
@@ -29,7 +62,7 @@ function Checkout() {
         </tbody>
       </table>
       <h2>Total: {cart.total}</h2>
-      <button>Checkout</button>
+      <button onClick={handleCheckout}>Checkout</button>
     </div>
   )
 }
