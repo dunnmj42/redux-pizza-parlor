@@ -13,3 +13,10 @@
 .App-title {
   font-size: 2em;
 }
+
+.cardColumns {
+  display: inline-grid;
+  margin: 10px 10px 10px 10px;
+  /* background-color: #DE8F6E; */
+  border-radius: 5px;
+}
