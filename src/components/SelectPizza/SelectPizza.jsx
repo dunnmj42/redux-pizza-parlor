@@ -38,13 +38,9 @@ function SelectPizza() {
       <h2>Step 1: Select Your Pizza</h2>
 
       {pizzas.map((pizza, i) => (
-        <PizzaItem key={i} pizza={pizza} />
+        <PizzaItem key={i} pizza={pizza} toggleSelect={toggleSelect}/>
       ))}
-      {!isItemSelected ? (
-        <Button onClick={() => toggleSelect(pizza)}>Add Pizza</Button>
-      ) : (
-        <Button onClick={() => toggleSelect(pizza)}>Remove Pizza</Button>
-      )}
+      
       <div className="proceedToForm">
         <Button onClick={() => proceedToForm(pizzasInCart)}></Button>
       </div>
