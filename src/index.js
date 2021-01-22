@@ -47,6 +47,8 @@ const totalReducer = (state = 0, action) => {
       return state += Number(action.payload);
     case "DOWNDOOT_TOTAL":
       return state - Number(action.payload);
+    case "CLEAR":
+      return 0;
     default:
       return state;
   }
