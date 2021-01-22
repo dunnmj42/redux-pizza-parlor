@@ -4,17 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 function Checkout() {
   const cart = useSelector((store) => store.cartReducer);
   const customer = useSelector((store) => store.customerReducer);
+  const total = useSelector((store) => store.totalReducer)
 
   const dispatch = useDispatch();
 
-  const handleCheckout = (cart, customer) => {
+  const handleCheckout = (cart, customer, total) => {
     let customerToSend = {
       customer_name: customer.name,
       street_address: customer.address,
       city: customer.city,
       zip: customer.zip,
       type: customer.type,
-      total: cart.total,
+      total: total,
       pizzas: cart.pizzas,
     };
 
@@ -62,7 +63,7 @@ function Checkout() {
           ))}
         </tbody>
       </table>
-      <h2>Total: {cart.total}</h2>
+      <h2>Total: {total}</h2>
       <button onClick={() => handleCheckout(cart, customer)}>Checkout</button>
     </div>
   );
