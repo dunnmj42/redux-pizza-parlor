@@ -1,4 +1,5 @@
-import {useDispatch, useSelector} from 'react-redux'
+import axios from 'axios';
+import {useDispatch, useSelector} from 'react-redux';
 
 function Checkout() {
 
@@ -61,7 +62,7 @@ function Checkout() {
         </tbody>
       </table>
       <h2>Total: {cart.total}</h2>
-      <button onClick={handleCheckout}>Checkout</button>
+      <button onClick={() => handleCheckout(cart, customer)}>Checkout</button>
     </div>
   )
 }
