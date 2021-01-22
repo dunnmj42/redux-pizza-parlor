@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #2D93AD;
 }
 
 .App-header {
@@ -19,4 +20,20 @@
   margin: 10px 10px 10px 10px;
   /* background-color: #DE8F6E; */
   border-radius: 5px;
+}
+
+.card {
+  width: 250px;
+  min-width: 250px;
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 6px #291528;
+}
+
+.image {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 3px;
+  box-shadow: 0 4px 6px #291528;
 }
