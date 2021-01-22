@@ -2,6 +2,7 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import Header from '../Header/Header'
 
 
 function CustomerForm() {
@@ -24,13 +25,14 @@ function CustomerForm() {
       payload: {name, address, city, zip, type}
     })
     //send to checkout page
-    history.push('/')
+    history.push('/checkout')
   }
 
 
 
   return(
     <>
+    <Header/>
     <div>
       <h2>Step 2: Customer Information</h2>
     </div>
