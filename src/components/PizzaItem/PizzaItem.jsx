@@ -5,6 +5,7 @@ import CardColumns from "react-bootstrap/CardColumns";
 import Button from "react-bootstrap/Button";
 
 function PizzaItem({ pizza }) {
+
   const [isItemSelected, setIsItemSelected] = useState(false);
 
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function PizzaItem({ pizza }) {
     dispatch({ type: "ADD_PIZZA_TO_CART", payload: pizzaToAdd });
   };
 
-  const removePizza = (pizzaToDelete, price) => {
+  const removePizza = (pizzaToDelete) => {
     console.log(`isItemSelected is:`, !isItemSelected);
     setIsItemSelected(!isItemSelected);
     dispatch({ type: "REMOVE_PIZZA_FROM_CART", payload: pizzaToDelete });
