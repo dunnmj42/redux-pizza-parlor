@@ -2,7 +2,6 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import Header from '../Header/Header'
 
 
 function CustomerForm() {
@@ -25,7 +24,7 @@ function CustomerForm() {
       payload: {name, address, city, zip, type}
     })
     //send to checkout page
-    history.push('/checkout');
+    history.push('/')
   }
 
 
@@ -33,7 +32,6 @@ function CustomerForm() {
   return(
     <>
     <div>
-      <Header />
       <h2>Step 2: Customer Information</h2>
     </div>
     <section>
@@ -43,9 +41,14 @@ function CustomerForm() {
         <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)}/>
         <input type="text" placeholder="Zip" value={zip} onChange={(e) => setZip(e.target.value)}/>
         {/* onClick to setType with checkbox value? */}
-        <input type="checkbox" id="pickup" name="pickup" value={type} onChange={(e) => setType(e.target.value)}/>
+        {/* <input type="checkbox" id="pickup" name="pickup" value={type} onChange={(e) => setType(e.target.value)}/>
         <label htmlFor="pickup">Pickup</label>
         <input type="checkbox" name="delivery" id="delivery" value={type}onChange={(e) => setType(e.target.value)}/>
+        <label htmlFor="delivery">Delivery</label> */}
+
+        <input type="radio" name="option" id="pickup" value="pickup" onChange={(e) => setType(e.target.value)} />
+        <label htmlFor="pickup">Pickup</label>
+        <input type="radio" name="option" id="delivery" value="delivery" onChange={(e) => setType(e.target.value)} />
         <label htmlFor="delivery">Delivery</label>
 
         <button type='submit'>NEXT</button>
