@@ -30,5 +30,5 @@ CREATE TABLE "line_item" (
 	"id" SERIAL PRIMARY KEY,
 	"order_id" INT REFERENCES "orders" ON DELETE CASCADE,
 	"pizza_id" INT REFERENCES "pizza",
-	"quantity" INT NOT NULL
+	"quantity" INT DEFAULT 1
 );
