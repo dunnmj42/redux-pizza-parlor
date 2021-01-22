@@ -7,8 +7,6 @@ import Button from "react-bootstrap/Button";
 function PizzaItem({ pizza }) {
 
   const [isItemSelected, setIsItemSelected] = useState(false);
-  
-  const pizzasInCart = useSelector((store) => store.cartReducer)
 
   const dispatch = useDispatch();
 
@@ -16,12 +14,14 @@ function PizzaItem({ pizza }) {
     console.log(`isItemSelected is:`, !isItemSelected);
     setIsItemSelected(!isItemSelected);
     dispatch({ type: "ADD_PIZZA_TO_CART", payload: pizzaToAdd });
+    dispatch({ type: "UPDOOT_TOTAL", payload: pizzaToAdd.price});
   };
 
   const removePizza = (pizzaToDelete) => {
     console.log(`isItemSelected is:`, !isItemSelected);
     setIsItemSelected(!isItemSelected);
     dispatch({ type: "REMOVE_PIZZA_FROM_CART", payload: pizzaToDelete });
+    dispatch({ type: "DOWNDOOT_TOTAL", payload: pizzaToDelete.price});
   };
 
   return (

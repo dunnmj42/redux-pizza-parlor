@@ -41,11 +41,23 @@ const cartReducer = (state = [], action) => {
   }
 };
 
+const totalReducer = (state = 0, action) => {
+  switch(action.type) {
+    case "UPDOOT_TOTAL":
+      return state += Number(action.payload);
+    case "DOWNDOOT_TOTAL":
+      return state - Number(action.payload);
+    default:
+      return state;
+  }
+}
+
 const reduxStore = createStore(
   combineReducers({
     cartReducer,
     pizzaReducer,
     customerReducer,
+    totalReducer
   }),
   applyMiddleware(logger)
 );
