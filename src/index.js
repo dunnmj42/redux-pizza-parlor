@@ -46,7 +46,6 @@ const reduxStore = createStore(
     cartReducer,
     pizzaReducer,
     customerReducer,
-    currentCartReducer
   }),
   applyMiddleware(logger)
 );

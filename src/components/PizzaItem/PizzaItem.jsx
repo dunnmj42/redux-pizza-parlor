@@ -7,6 +7,8 @@ import Button from "react-bootstrap/Button";
 function PizzaItem({ pizza }) {
 
   const [isItemSelected, setIsItemSelected] = useState(false);
+  
+  const pizzasInCart = useSelector((store) => store.cartReducer)
 
   const dispatch = useDispatch();
 

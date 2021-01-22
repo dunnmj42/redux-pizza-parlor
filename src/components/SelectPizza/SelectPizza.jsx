@@ -12,12 +12,10 @@ function SelectPizza() {
   const dispatch = useDispatch();
 
   const pizzas = useSelector((store) => store.pizzaReducer);
-  const pizzasInCart = useSelector((store) => store.currentCartReducer)
+  const pizzasInCart = useSelector((store) => store.cartReducer)
 
 
   const proceedToForm = (pizzasInCart) => {
-    console.log(`Moving to customer info page`);
-    dispatch({ type: "SET_CART", payload: pizzasInCart });
     history.push("/form");
   };
 
