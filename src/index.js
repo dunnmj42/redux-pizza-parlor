@@ -7,17 +7,6 @@ import "./index.css";
 import App from "./components/App/App";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const cartReducer = (state = [], action) => {
-  switch (action.type) {
-    case "SET_CART":
-      return action.payload;
-    case "CLEAR":
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
 const pizzaReducer = (state = [], action) => {
   switch (action.type) {
     case "SET_PIZZAS":
@@ -38,13 +27,15 @@ const customerReducer = (state = [], action) => {
   }
 };
 
-const currentCartReducer = (state = [], action) => {
+const cartReducer = (state = [], action) => {
   switch (action.type) {
     case "ADD_PIZZA_TO_CART":
       return [...state, action.payload];
     case "REMOVE_PIZZA_FROM_CART":
       const matchPizza = pizza => pizza.id !== action.payload.id
       return state.filter(matchPizza);
+    case "CLEAR":
+      return action.payload;
     default:
       return state;
   }
