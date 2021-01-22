@@ -61,7 +61,7 @@ function Checkout() {
         </tbody>
       </table>
       <h2>Total: {cart.total}</h2>
-      <button onClick={handleCheckout}>Checkout</button>
+      <button onClick={() => handleCheckout(cart, customer)}>Checkout</button>
     </div>
   )
 }
